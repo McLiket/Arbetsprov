@@ -1,0 +1,165 @@
+body{
+    background: rgb(0, 38, 80);
+    background: -webkit-linear-gradient( rgb(0, 38, 80),rgb(59, 88, 167)) fixed;
+    background: -o-linear-gradient( rgb(0, 38, 80),rgb(59, 88, 167)) fixed;
+    background: -moz-linear-gradient( rgb(0, 38, 80),rgb(59, 88, 167)) fixed;
+    background: linear-gradient( rgb(0, 38, 80),rgb(59, 88, 167)) fixed;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.centered-logo{
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+.search-module{
+    margin:0 auto 20px auto;
+    max-width:600px;
+    position:relative
+}
+
+.main-search-form label{
+    position:absolute;
+    font-size: 0px;
+    left: -9999px;
+}
+
+.search-icon{
+    position:absolute;
+}
+
+.search-icon::before{
+    content: url("UI/assets/search.svg");
+    position: absolute;
+    top: 25px;
+    left: 12px; /*(40-16)/2 = 12*/
+}
+
+.main-search-form input{
+    font-size: 24px;
+    padding: 20px 20px 20px 40px;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    width:100%;
+    background-color: rgb(128, 146, 167);
+    color: white;
+}
+.main-search-form input:focus{
+    background-color: rgb(179, 190, 203);
+}
+
+.main-search-form input::placeholder{
+    color:rgb(183,194,206);
+}
+
+.search-autocomplete-list
+{
+    margin-top: 5px;
+    position: absolute;
+    list-style: none;
+    text-align: left;
+    background-color: white;
+    padding: 0px;
+    box-sizing: border-box;
+    width:100%;
+}
+.search-autocomplete-list li
+{
+    padding: 5px 5px 5px 5px;
+}
+.search-autocomplete-list li:hover, .search-autocomplete-list li:focus
+{
+    background-color: rgb(230,230,230);
+}
+
+.search-autocomplete-list .selected-result{
+    background-color: rgb(230,230,230);
+}
+.search-result-list:empty{
+    display:none;
+}
+.search-result-list{
+    list-style-type: none;
+    padding: 10px 0 10px 0;
+    margin:auto;
+    text-align: left;
+    width:600px;
+    background: dimgray;
+    background: rgba(255,255,255,0.1);
+}
+.search-result-list li{
+    color:white;
+    display: flex;
+    align-items: baseline;
+    padding: 0 0 0 40px;
+}
+.search-result-list li:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+
+.search-result-list .result-title{
+    margin: 9px 20px 15px 0;
+    font-size: 24px;
+    flex-basis: 100%;
+    overflow-wrap: break-word;
+    overflow-x: hidden;
+
+}
+.search-result-list time{
+    margin: 9px 20px 15px 0;
+    font-size: 12px;
+    flex: 0 0 auto;
+}
+
+.search-result-list .search-result-remove{
+    visibility: hidden;
+}
+li:hover .search-result-remove{
+    visibility: visible;
+    border: none;
+}
+.search-result-remove{
+    flex: 0 0 48px;
+    align-self: stretch;
+    background-color: rgb(127,57,82);
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<?xml version="1.0" encoding="utf-8"?><!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 width="44.238px" height="44.238px" viewBox="0 0 44.238 44.238" enable-background="new 0 0 44.238 44.238" xml:space="preserve"><g>	<circle fill="#FFFFFF" cx="22.119" cy="22.119" r="21.535"/>	<g>		<path fill="#919191" d="M15.533,29.455c-0.192,0-0.384-0.073-0.53-0.22c-0.293-0.293-0.293-0.77,0-1.063l13.171-13.171			c0.293-0.293,0.769-0.293,1.062,0s0.293,0.769,0,1.062L16.063,29.235C15.917,29.382,15.725,29.455,15.533,29.455z"/>	</g>	<g>		<path fill="#6B6B6B" d="M28.704,29.455c-0.191,0-0.384-0.073-0.53-0.22L15.002,16.064c-0.293-0.293-0.293-0.769,0-1.062			s0.769-0.293,1.062,0l13.171,13.171c0.293,0.293,0.293,0.77,0,1.063C29.088,29.382,28.896,29.455,28.704,29.455z"/>	</g></g></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    color:transparent;
+    font-size: 0px;
+}
+@media screen and (max-width: 768px) {
+    .search-module, .search-result-list {
+        width: auto;
+        margin: 20px auto 0 auto;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    .main-search-form input{
+        font-size: 14px;
+    }
+    .search-icon::before{
+        top:20px;
+    }
+    .search-result-list{
+        margin:20px 0;
+    }
+    .search-module{
+        margin: 20px 20px 0 20px;
+    }
+
+    .search-result-list .result-title{
+        font-size: 16px;
+        flex-basis: 100%;
+    }
+    .search-result-list time{
+        font-size: 10px;
+    }
+
+}
